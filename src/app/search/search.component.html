@@ -2,9 +2,40 @@
 
     <form>
     <div class="form-group">
-      <input type="text" required class="" id="name" placeholder="SEARCH">
-       <button id="button"><img src="assets/searchimage.png" alt="search" height="30px" width="30px"></button>
+      <input type="text" required class="namesearch" [(ngModel)]="username" id="name" placeholder="SEARCH" name="username" (keyup)="getProfile()">
+    </div>
+    <div class="search-class">
+       
+      </div> >
+    <div *ngIf="searchUsers"  class="button">
+        <a href="{{user.html_url}}" target="_blank">
+            <button id="button"><img src="assets/searchimage.png" alt="search" height="30px" width="30px"></button>
+        </a>
+    
     </div>
     </form>
+    <div class="userinfo">
+      <div id="username">
+        <h2>{{user.name}}</h2>
+      </div>
+      <div id="following">
+          <p>Followers<br><span>{{user.followers}}</span></p>
+          <p>Following<br><span>{{user.following}}</span></p>
+
+      </div>
+      <div id="repositories">
+        <p >{{user.public_repos}}</p>
+      </div>
+      <div *ngIf="!searchUsers" >
+          <div *ngFor="let rep of repo" >
+              <a href="{{rep.html_url}}" target="_blank">
+                  <h3>{{rep.name}}</h3>
+                  <p>{{rep.description}}</p>
+              </a>
+          </div>
+    
+      </div>
+    
+    </div>
 
 </div>

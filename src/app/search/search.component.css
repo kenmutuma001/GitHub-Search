@@ -23,3 +23,12 @@
     margin-left: 145px;
     margin-top: -46px;
 }
+.userinfo{
+    background-color: rgba(245, 245, 245, 0.815);
+    margin-left: 5px;
+    margin-right: 800px;
+    margin-top: 15px;
+}
+.namesearch{
+    background-color: rgba(163, 31, 31, 0.815);
+}
